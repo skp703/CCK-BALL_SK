@@ -55,11 +55,11 @@
 
         DVORAK {
             bindings = <
-&kp ESC           &kp N1        &kp N2        &kp N3      &kp N4     &kp N5  &kp N6  &kp N7     &kp N8     &kp N9          &kp N0          &kp BACKSPACE
-&kp TAB           &kp SQT       &kp COMMA     &kp DOT     &kp P      &kp Y   &kp F   &kp G      &kp C      &kp R           &kp L           &kp EQUAL
-&kp CAPSLOCK      &kp A         &lt 4 O       &kp E       &lt 1 U    &kp I   &kp D   &kp H      &kp T      &lt 4 N         &kp S           &kp MINUS
-&kp LEFT_SHIFT    &kp SEMI      &kp Q         &kp J       &kp K      &kp X   &kp B   &kp M      &kp W      &kp V           &kp UP_ARROW    &kp Z
-&kp LEFT_CONTROL  &kp LEFT_WIN  &kp LEFT_ALT  &kp DELETE  &kp SPACE  &mo 1   &mo 2   &kp SPACE  &kp ENTER  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW
+&kp ESC           &kp N1        &kp N2        &kp N3         &kp N4     &kp N5  &kp N6  &kp N7     &kp N8     &kp N9          &kp N0          &kp DELETE
+&kp TAB           &kp SQT       &kp COMMA     &kp DOT        &kp P      &kp Y   &kp F   &kp G      &kp C      &kp R           &kp L           &kp EQUAL
+&kp CAPSLOCK      &kp A         &lt 4 O       &kp E          &lt 1 U    &kp I   &kp D   &lt 1 H    &kp T      &lt 4 N         &kp S           &kp MINUS
+&kp LEFT_SHIFT    &kp SEMI      &kp Q         &kp J          &kp K      &kp X   &kp B   &kp M      &kp W      &kp V           &kp UP_ARROW    &kp Z
+&kp LEFT_CONTROL  &kp LEFT_WIN  &kp LEFT_ALT  &kp BACKSPACE  &kp SPACE  &mo 1   &mo 2   &kp SPACE  &kp ENTER  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -114,7 +114,7 @@
 
             sensor-bindings =
                 <&scroll_vertical_encoder>,
-                // 编码器1：上下滚动,,
+                // 编码器1：上下滚动,,,
                 <&scroll_horizontal_encoder>;
 
             // 编码器2：左右滚动
