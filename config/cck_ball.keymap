@@ -57,7 +57,7 @@
             bindings = <
 &kp ESC           &kp N1        &kp N2        &kp N3      &kp N4     &kp N5  &kp N6  &kp N7     &kp N8     &kp N9          &kp N0          &kp BACKSPACE
 &kp TAB           &kp SQT       &kp COMMA     &kp DOT     &kp P      &kp Y   &kp F   &kp G      &kp C      &kp R           &kp L           &kp EQUAL
-&kp CAPSLOCK      &kp A         &lt 4 O       &kp E       &lt 3 U    &kp I   &kp D   &kp H      &kp T      &kp N           &kp S           &kp MINUS
+&kp CAPSLOCK      &kp A         &lt 4 O       &kp E       &lt 1 U    &kp I   &kp D   &kp H      &kp T      &lt 4 N         &kp S           &kp MINUS
 &kp LEFT_SHIFT    &kp SEMI      &kp Q         &kp J       &kp K      &kp X   &kp B   &kp M      &kp W      &kp V           &kp UP_ARROW    &kp Z
 &kp LEFT_CONTROL  &kp LEFT_WIN  &kp LEFT_ALT  &kp DELETE  &kp SPACE  &mo 1   &mo 2   &kp SPACE  &kp ENTER  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW
             >;
@@ -67,14 +67,16 @@
 
         F_layers {
             bindings = <
-&kp F12  &kp F1     &kp F2         &kp F3  &kp F4  &kp F5  &kp F6     &kp F7     &kp F8  &kp F9  &kp F10  &kp F11
-&kp A    &none      &none          &none   &none   &trans  &none      &none      &none   &trans  &trans   &kp SLASH
-&trans   &none      &none          &none   &none   &trans  &mkp LCLK  &mkp RCLK  &trans  &trans  &trans   &trans
-&trans   &trans     &trans         &trans  &trans  &none   &none      &none      &trans  &trans  &none    &trans
-&trans   &kp GRAVE  &kp BACKSLASH  &trans  &trans  &trans  &mkp LCLK  &mkp RCLK  &trans  &trans  &trans   &trans
+&kp F12  &kp F1     &kp F2         &kp F3  &kp F4  &kp F5     &kp F6     &kp F7     &kp F8     &kp F9  &kp F10  &kp F11
+&kp A    &none      &none          &none   &none   &trans     &none      &none      &none      &trans  &trans   &kp SLASH
+&trans   &none      &none          &none   &none   &trans     &mkp MCLK  &mkp LCLK  &mkp RCLK  &trans  &trans   &trans
+&trans   &trans     &trans         &trans  &trans  &none      &none      &none      &trans     &trans  &none    &trans
+&trans   &kp GRAVE  &kp BACKSLASH  &trans  &trans  &mkp MCLK  &mkp MCLK  &mkp LCLK  &mkp RCLK  &trans  &trans   &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings =
+                <&scroll_vertical_encoder>,
+                <&scroll_horizontal_encoder>;
         };
 
         BT_layers {
@@ -101,20 +103,21 @@
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
 
-        snipe-layers {
+        home_row_mod {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans    &trans    &trans     &trans     &trans  &trans  &trans     &trans     &trans    &trans    &trans
+&trans  &trans    &trans    &trans     &trans     &trans  &trans  &trans     &trans     &trans    &trans    &trans
+&trans  &kp LALT  &kp LGUI  &kp RCTRL  &kp LSHFT  &trans  &trans  &kp LSHFT  &kp RCTRL  &kp LGUI  &kp RALT  &trans
+&trans  &trans    &trans    &trans     &trans     &trans  &trans  &trans     &trans     &trans    &trans    &trans
+&trans  &trans    &trans    &trans     &trans     &trans  &trans  &trans     &trans     &trans    &trans    &trans
             >;
 
             sensor-bindings =
                 <&scroll_vertical_encoder>,
-                // 编码器1：上下滚动,
+                // 编码器1：上下滚动,,
                 <&scroll_horizontal_encoder>;
-  // 编码器2：左右滚动
+
+            // 编码器2：左右滚动
         };
     };
 };
